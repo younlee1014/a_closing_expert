@@ -54,6 +54,6 @@ public class CalculatorTest {
 
             result = Calculator.calculator(result, symbol, second);
         }
-        OutPut.print(result);
+        Output.print(result);
     }
 }

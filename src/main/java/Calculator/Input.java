@@ -2,7 +2,7 @@ package Calculator;
 
 import java.util.Scanner;
 
-public class InPut {
+public class Input {
     static int getFirstValue(Scanner scanner) {
         System.out.println("첫번째 입력 값 : ");
         int first = scanner.nextInt();
