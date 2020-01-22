@@ -1,59 +1,47 @@
 package Calculator;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.NullSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
-import java.util.Scanner;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest {
 
     @Test
-    public void sumTest() {
-        assertEquals(30, Calculator.sum(10, 20));
+    public void addTest() {
+        assertEquals(30, Calculator.add(10, 20));
     }
 
     @Test
-    public void subTest() {
-        assertEquals(10, Calculator.sub(40, 30));
+    public void subtractTest() {
+        assertEquals(10, Calculator.subtract(40, 30));
     }
 
     @Test
-    public void mulTest() {
-        assertEquals(25, Calculator.mul(5, 5));
+    public void multiplyTest() {
+        assertEquals(25, Calculator.multiply(5, 5));
     }
 
     @Test
-    public void divTest(){
-        assertEquals(5, Calculator.div(10, 2));
+    public void divisionTest() {
+        assertEquals(5, Calculator.division(10, 2));
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("계산값 입력 : ");
+    @ParameterizedTest
+    @ValueSource(strings = {"", " ", "*"})
+    @NullSource
+    public void nullCheckTest(String text) {
+        assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> Calculator.calculator(2, text, 4));
+    }
 
-        String value = scanner.nextLine();
-        System.out.println("입력 값 : ");
-
-        if (value.isEmpty()) {
-            throw new IllegalArgumentException("입력값이 없음");
-        }
-
-        String[] values = value.split(" ");
-
-        int first = Integer.parseInt(values[0]);
-        System.out.println("first : " + first);
-
-        int result = first;
-        for (int i = 1; i < values.length; i = i + 2) {
-            String symbol = values[i];
-            System.out.println("symbol : " + symbol);
-
-            int second = Integer.parseInt(values[i + 1]);
-            System.out.println("second : " + second);
-
-            result = Calculator.calculator(result, symbol, second);
-        }
-        Output.print(result);
+    @ParameterizedTest
+    @ValueSource(strings = {"*", "$"})
+    public void 사칙연산(String symbol) {
+        assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> Calculator.calculator(2, symbol, 5));
     }
 }
