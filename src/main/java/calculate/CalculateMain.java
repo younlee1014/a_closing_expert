@@ -2,6 +2,7 @@ package calculate;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class CalculateMain {
     protected static Map<String, Calculate> calculateMap = new HashMap<>();
@@ -14,7 +15,11 @@ public class CalculateMain {
     }
 
     public static void main(String[] args) {
-       execute("2 + 3 * 10 / 5");
+        System.out.println("계산식을 입력하세요.");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+       execute(input);
     }
 
     public static void execute(String input){
