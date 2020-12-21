@@ -1,21 +1,5 @@
-# blucean_study
+# blucean_study(TDD)
 
-### **기능 요구사항**
+[1. 문자열 계산기](https://github.com/lsy09/blucean_study_01/blob/sue.lee/src/main/java/Calculator/Calculator.md)
 
-- 사용자가 입력한 문자열 값에 따라 사칙연산을 수행할 수 있는 계산기를 구현
-- 문자열 계산기는 사칙연산의 계산 우선순위 아닌 입력 값에 따라 계산 순서가 결정
-<br>즉, 수학에서는 곱셈, 나눗셈이 덧셈, 뺄셈 보다 먼저 계산해야 하지만 이를 무시
-- 예를 들어 "2+3\*4/2"와 같은 문자열을 입력할 경우 2+3\*4/2 실행 결과인 10을 출력
-
-### **기능 분리**
-
-- 테스트할 수 있는 단위로 나누어 구현 목록을 만듬
-    - 덧셈
-    - 뺄셈
-    - 곱셈
-    - 나눗셈
-    - 입력 값이 null이거나 빈 공백 문자일 경우 IllegalArgumentException throw
-    - 사칙 연산 기호가 아닌 경우 IllegalArgumentException throw
-    - 사칙 연산을 모두 포함하는 기능 구현
-- 공백 문자열을 빈 공백 문자로 분리하려면 String 클래스의 split(" ")메소드 활용
-- 반복적인 패턴을 찾아 반복문으로 구현
+[2. 자동차 경주게임 1단계](https://github.com/lsy09/blucean_study_01/blob/sue.lee/src/main/java/RacingCar01/RacingCar01.md)

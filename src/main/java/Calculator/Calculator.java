@@ -12,7 +12,7 @@ public class Calculator {
             return multiply(first, second);
         if (symbol.equals("/"))
             return division(first, second);
-        throw new IllegalArgumentException();
+        throw new IllegalArgumentException("that's illegal !!");
     }
 
     static int add(int first, int second) {
