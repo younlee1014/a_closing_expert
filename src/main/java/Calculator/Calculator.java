@@ -12,13 +12,13 @@ public class Calculator {
 
     // 2. 입력값 공백/null 체크
     static boolean isBlank(String input) {
-        if (input.equals(" ") || input == null) {
-            return true;
+        if (input == null ||input.equals(" ") || input.isEmpty()) {
+            throw new IllegalArgumentException("IllegalArgumentException !!!");
         }
         return false;
     }
 
-    // 2-1. 입력값 공백 제거
+    // 2-1. 입력값 공백 기준으로 split
     static String[] splitBlank(String input) {
         return input.split(" ");
     }
@@ -26,7 +26,7 @@ public class Calculator {
     // 3. 입력 값 실행
     static int makeResult(String input) {
         if (isBlank(input))
-            throw new RuntimeException();
+            throw new IllegalArgumentException("IllegalArgumentException !!!");
         return calculateSplitedString(splitBlank(input));
     }
 
@@ -48,7 +48,7 @@ public class Calculator {
             return multiplication(first, second);
         if (operator == '/')
             return division(first, second);
-        throw new RuntimeException();
+        throw new IllegalArgumentException("IllegalArgumentException !!!");
     }
 
     static int addition(int i, int j) {
