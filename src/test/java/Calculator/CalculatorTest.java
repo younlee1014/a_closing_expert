@@ -36,14 +36,14 @@ public class CalculatorTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"", " ", "*"})
+    @ValueSource(strings = {"", " "})
     @NullSource
     public void 공백널체크(String input) {
         assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> Calculator.isBlank(input));
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"*", "$"})
+    @ValueSource(strings = {"*", "+"})
     public void 사칙연산(char operator) {
         assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> Calculator.calculate(2, operator, 5));
     }
