@@ -19,7 +19,7 @@ public class MainTest2 {
         return sc.nextLine();
     }
 
-    // 2. 입력값 공백 체크
+    // 2. 입력값 공백/null 체크
     static boolean isBlank(String input) {
         if (input.equals(" ") || input == null) {
             return true;
@@ -27,7 +27,7 @@ public class MainTest2 {
         return false;
     }
 
-    // 2-1. 입력값 공백 제
+    // 2-1. 입력값 공백 제거
     static String[] splitBlank(String input) {
         return input.split(" ");
     }
