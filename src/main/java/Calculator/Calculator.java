@@ -4,33 +4,30 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    // 1. 문자열 입력
+    static final String STRING_BLANK = " ";
+
     static String input() {
         Scanner sc = new Scanner(System.in);
         return sc.nextLine();
     }
 
-    // 2. 입력값 공백/null 체크
     static boolean isBlank(String input) {
-        if (input == null ||input.equals(" ") || input.isEmpty()) {
+        if (input == null ||input.equals(STRING_BLANK) || input.isEmpty()) {
             throw new IllegalArgumentException("IllegalArgumentException !!!");
         }
         return false;
     }
 
-    // 2-1. 입력값 공백 기준으로 split
     static String[] splitBlank(String input) {
-        return input.split(" ");
+        return input.split(STRING_BLANK);
     }
 
-    // 3. 입력 값 실행
     static int makeResult(String input) {
         if (isBlank(input))
             throw new IllegalArgumentException("IllegalArgumentException !!!");
         return calculateSplitedString(splitBlank(input));
     }
 
-    // 4. 입력 값 계산 실행
     static int calculateSplitedString(String[] str) {
         int result = toInt(str[0]);
         for (int i = 0; i < str.length - 2; i += 2) {
