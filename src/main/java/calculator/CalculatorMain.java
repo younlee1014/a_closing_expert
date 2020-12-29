@@ -1,7 +1,7 @@
-package Calculator;
+package calculator;
 
-import static Calculator.Calculator.input;
-import static Calculator.Calculator.makeResult;
+import static calculator.Calculator.input;
+import static calculator.Calculator.makeResult;
 
 public class CalculatorMain {
     public static void main(String[] args) {
