@@ -80,4 +80,6 @@ public class MainTest2 {
         return Integer.parseInt(str);
     }
 
+    static void totla(){};
+
 }
