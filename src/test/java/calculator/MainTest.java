@@ -2,7 +2,7 @@ package calculator;
 
 import java.util.Scanner;
 
-public class MainTest2 {
+public class MainTest {
 
     public static void main(String[] args) {
         System.out.println("문자열을 입력 하세요");
