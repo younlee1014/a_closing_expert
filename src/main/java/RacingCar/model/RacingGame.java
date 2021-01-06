@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RacingGame {
-
-    private final static int NUMBER_OF_MOVES = 4;
     private final static int RANDOM_NUMBER_RANGE = 10;
     private int attempts;
     private List<RacingCar> cars;
@@ -36,15 +34,10 @@ public class RacingGame {
         }
     }
 
-    public boolean canMove(int number) {
-        if (number >= NUMBER_OF_MOVES) {
-            return true;
-        }
-        return false;
-    }
+
 
     private void moveOrStopCar(RacingCar car) {
-        if (canMove(RandomGenerator.getRandomNumber(RANDOM_NUMBER_RANGE))) {
+        if (car.isMove(RandomGenerator.getRandomNumber(RANDOM_NUMBER_RANGE))) {
             car.move();
         }
     }
