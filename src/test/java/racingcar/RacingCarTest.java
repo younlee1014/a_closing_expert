@@ -3,6 +3,7 @@ package racingcar;
 import org.junit.jupiter.api.Test;
 import racingcar.model.RacingCar;
 
+import static com.sun.tools.doclint.Entity.or;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class RacingCarTest {
@@ -13,15 +14,17 @@ public class RacingCarTest {
         assertThat(rcCar.getPosition()).isEqualTo(0);
     }
 
-//    @Test
-//    public void random_4이상_이면_전진_한다() {
-//        RacingCar rcCar = new RacingCar();
-//        assertThat(rcCar.move(5));
-//    }
-//
-//    @Test
-//    public void random_4이하_이면_정지_한다() {
-//        RacingCar rcCar = new RacingCar();
-//        assertThat(rcCar.move(3));
-//    }
+    @Test
+    public void random_4이상_이면_전진_한다() {
+        RacingCar rcCar = new RacingCar();
+        rcCar.move(5);
+        assertThat(rcCar.getPosition()).isEqualTo(1);
+    }
+
+    @Test
+    public void random_4이하_이면_정지_한다() {
+        RacingCar rcCar = new RacingCar();
+        rcCar.move(3);
+        assertThat(rcCar.getPosition()).isEqualTo(0);
+    }
 }
