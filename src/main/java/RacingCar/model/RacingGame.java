@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RacingGame {
+
     private final static int RANDOM_NUMBER_RANGE = 10;
+
     private int attempts;
     private List<RacingCar> cars;
 
@@ -34,12 +36,14 @@ public class RacingGame {
         }
     }
 
-
-
     private void moveOrStopCar(RacingCar car) {
-        if (car.isMove(RandomGenerator.getRandomNumber(RANDOM_NUMBER_RANGE))) {
-            car.move();
-        }
+        int randomInt = getRandomInt();
+
+        car.move(randomInt);
+    }
+
+    private int getRandomInt() {
+        return RandomGenerator.getRandomNumber(RANDOM_NUMBER_RANGE);
     }
 
 }

@@ -13,15 +13,15 @@ public class RacingCarTest {
         assertThat(rcCar.getPosition()).isEqualTo(0);
     }
 
-    @Test
-    public void random_4이상_이면_전진_한다() {
-        RacingCar rcCar = new RacingCar();
-        assertThat(rcCar.isMove(5)).isTrue();
-    }
-
-    @Test
-    public void random_4이하_이면_정지_한다() {
-        RacingCar rcCar = new RacingCar();
-        assertThat(rcCar.isMove(3)).isFalse();
-    }
+//    @Test
+//    public void random_4이상_이면_전진_한다() {
+//        RacingCar rcCar = new RacingCar();
+//        assertThat(rcCar.move(5));
+//    }
+//
+//    @Test
+//    public void random_4이하_이면_정지_한다() {
+//        RacingCar rcCar = new RacingCar();
+//        assertThat(rcCar.move(3));
+//    }
 }
