@@ -37,11 +37,13 @@ public class RacingGame {
     }
 
     private void moveOrStopCar(RacingCar car) {
+
         int randomInt = getRandomInt();
 
         car.move(randomInt);
-        System.out.println(car.showMove('-'));
+
     }
+
 
     private int getRandomInt() {
         return RandomGenerator.getRandomNumber(RANDOM_NUMBER_RANGE);

@@ -14,13 +14,13 @@ public class RacingCar {
             position++;
     }
 
-    public String showMove(char hyphen) {
-        StringBuffer track = new StringBuffer();
-        for (int i = 0; i < position; i++) {
-            track.append(hyphen);
-        }
-        return track.toString();
-    }
+//    public String showMove(char hyphen) {
+//        StringBuffer track = new StringBuffer();
+//        for (int i = 0; i < position; i++) {
+//            track.append(hyphen);
+//        }
+//        return track.toString();
+//    }
 
     public int getPosition() {
         return position;

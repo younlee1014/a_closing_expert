@@ -12,7 +12,6 @@ public class RacingCarMain {
 
         racingGame.readGame(InputView.inputCars(), InputView.inputAttempt());
         resultView.showRacingCarOutPut(racingGame.playGame());
-
     }
 
 }
