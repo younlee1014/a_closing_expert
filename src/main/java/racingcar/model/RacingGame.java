@@ -1,6 +1,7 @@
 package racingcar.model;
 
 import racingcar.util.RandomGenerator;
+import racingcar.view.ResultView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,13 +32,14 @@ public class RacingGame {
     }
 
     private void moveCars() {
+        ResultView resultView = new ResultView();
         for (RacingCar car : cars) {
             moveOrStopCar(car);
         }
+        resultView.showRacingCarOutPut(cars);
     }
 
     private void moveOrStopCar(RacingCar car) {
-
         int randomInt = getRandomInt();
 
         car.move(randomInt);
