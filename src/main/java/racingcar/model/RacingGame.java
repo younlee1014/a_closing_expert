@@ -40,6 +40,7 @@ public class RacingGame {
         int randomInt = getRandomInt();
 
         car.move(randomInt);
+        System.out.println(car.showMove('-'));
     }
 
     private int getRandomInt() {

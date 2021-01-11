@@ -76,3 +76,44 @@ test (when adding missing tests)
 chore (maintain)
 ```
 
+##### 기능 구현 목록
+1. 사용자에게 이동할 자동차 대수를 받는다.
+    ```java
+        public static int inputCars(){
+            System.out.println("자동자 대수는 몇 대 인가요?");
+            return new Scanner(System.in).nextInt();
+        }
+    ```
+  
+2. 사용자에게 시도할 횟수를 받는다.
+    ```java
+        public static int inputAttempt(){
+            System.out.println("시도할 횟수는 몇 회 인가요?");
+            return new Scanner(System.in).nextInt();
+        }
+    ```
+
+3. 전진하는 조건은 0에서 9 사이에서 random 값을 구한다.
+    ```java
+        public static int getRandomNumber(int range) {
+                return new Random().nextInt(range);
+            }
+    ```
+
+4. random 값이 4이상일 경우 전진 한다.
+    ```java
+      public void move(int randomInt) {
+        if (randomInt >= NUMBER_OF_MOVES)
+        position++;
+        }
+    ```
+   
+5. 자동차의 상태를 화면에 출력 한다.
+    ```java
+        private void moveOrStopCar(RacingCar car) {
+            int randomInt = getRandomInt();
+    
+            car.move(randomInt);
+            System.out.println(car.showMove('-'));
+        }
+    ```

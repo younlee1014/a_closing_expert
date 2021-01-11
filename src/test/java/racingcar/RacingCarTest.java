@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import racingcar.model.RacingCar;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RacingCarTest {
 
@@ -25,5 +26,18 @@ public class RacingCarTest {
         RacingCar rcCar = new RacingCar();
         rcCar.move(3);
         assertThat(rcCar.getPosition()).isEqualTo(0);
+    }
+
+    @Test
+    public void hyphen(){
+        RacingCar rcCar = new RacingCar();
+        rcCar.move(5);
+        assertEquals("-", rcCar.showMove('-'));
+    }
+
+    @Test
+    public void un_hyphen(){
+        RacingCar rcCar = new RacingCar();
+        assertEquals("", rcCar.showMove('-'));
     }
 }
