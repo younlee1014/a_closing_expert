@@ -32,20 +32,16 @@ public class RacingGame {
     }
 
     private void moveCars() {
-        ResultView resultView = new ResultView();
         for (RacingCar car : cars) {
             moveOrStopCar(car);
         }
-        resultView.showRacingCarOutPut(cars);
+        ResultView.showRacingCarOutput(cars);
     }
 
     private void moveOrStopCar(RacingCar car) {
         int randomInt = getRandomInt();
-
         car.move(randomInt);
-
     }
-
 
     private int getRandomInt() {
         return RandomGenerator.getRandomNumber(RANDOM_NUMBER_RANGE);
