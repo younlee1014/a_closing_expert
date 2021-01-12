@@ -11,6 +11,7 @@ public class ResultView {
         for (RacingCar car : cars) {
             System.out.println(showMove(HYPHEN, car));
         }
+        System.out.println();
     }
 
     public static String showMove(char hyphen, RacingCar racingCar) {
